@@ -1,0 +1,23 @@
+{
+  "name": "readbuf",
+  "version": "1.0.0",
+  "description": "Read buffer in a blazing fast way!",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crzidea/node-readbuf.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crzidea/node-readbuf/issues"
+  },
+  "homepage": "https://github.com/crzidea/node-readbuf#readme",
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "mocha": "^3.3.0"
+  }
+}
