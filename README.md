@@ -1,4 +1,8 @@
 # readbuf
+
+[![Build Status](https://travis-ci.org/crzidea/node-readbuf.svg?branch=master)](https://travis-ci.org/crzidea/node-readbuf)
+[![npm version](https://badge.fury.io/js/readbuf.svg)](https://badge.fury.io/js/readbuf)
+
 Read buffer in a blazing fast way! 7x faster than `Buffer`.
 
 ## Install
