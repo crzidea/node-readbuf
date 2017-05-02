@@ -1,6 +1,6 @@
 {
   "name": "readbuf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Read buffer in a blazing fast way!",
   "main": "index.js",
   "scripts": {
