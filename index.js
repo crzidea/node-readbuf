@@ -1,20 +1,23 @@
-class BufferReader {
-  constructor(buffer, start, end) {
-    this.buffer = buffer
-    this.start  = start || 0
-    this.end    = end   || buffer.length
-    this.length = this.end - this.start
-  }
-  slice(start, end) {
-    return new BufferReader(this, start, end)
-  }
-  toString(encoding='utf8', start=0, end=this.length) {
-    return this.buffer.toString(
-      encoding,
-      this.start + start,
-      this.start + end
-    )
-  }
+function BufferReader(buffer, start, end) {
+  this.buffer = buffer
+  this.start  = start || 0
+  this.end    = end   || buffer.length
+  this.length = this.end - this.start
+}
+
+BufferReader.prototype.slice = function(start, end) {
+  return new BufferReader(this, start, end)
+}
+
+BufferReader.prototype.toString = function(encoding, start, end) {
+  encoding  = encoding || 'utf8'
+  start     = start || 0
+  end       = end || this.length
+  return this.buffer.toString(
+    encoding,
+    this.start + start,
+    this.start + end
+  )
 }
 
 var operations = [
