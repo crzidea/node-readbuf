@@ -16,7 +16,7 @@ function run(suite) {
   .run()
 }
 
-const buffer = new Buffer('abcdefghijklmnopqrstuvwxyz')
+const buffer = Buffer.from('abcdefghijklmnopqrstuvwxyz')
 const reader = readbuf(buffer)
 
 run(
