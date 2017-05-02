@@ -1,36 +1,36 @@
-const assert = require('assert')
-const readbuf = require('.')
+var assert = require('assert')
+var readbuf = require('.')
 
 describe('readbuf', () => {
-  const buffer = new Buffer('abcdefghijklmnopqrstuvwxyz')
+  var buffer = new Buffer('abcdefghijklmnopqrstuvwxyz')
   describe('readbuf(buffer)', () => {
     it('should counld be initialized', () => {
-      const reader = readbuf(buffer)
+      var reader = readbuf(buffer)
     })
   })
   describe('operations', () => {
-    const reader = readbuf(buffer)
+    var reader = readbuf(buffer)
     it('should be readed', () => {
-      for (const operation of readbuf.operations) {
-        const a = reader[operation](1)
-        const b = buffer[operation](1)
+      for (var operation of readbuf.operations) {
+        var a = reader[operation](1)
+        var b = buffer[operation](1)
         assert.strictEqual(a, b)
       }
     })
   })
   describe('#slice()', () => {
-    let reader = readbuf(buffer)
-    let offset = 0
-    const step = 2
+    var reader = readbuf(buffer)
+    var offset = 0
+    var step = 2
     it('should create new BufferReader with new offset', () => {
       reader = reader.slice(step)
       offset += step
     })
     it('should be readed', () => {
-      const start = 2
-      for (const operation of readbuf.operations) {
-        const a = reader[operation](start)
-        const b = buffer[operation](offset + start)
+      var start = 2
+      for (var operation of readbuf.operations) {
+        var a = reader[operation](start)
+        var b = buffer[operation](offset + start)
         assert.strictEqual(a, b)
       }
     })
@@ -39,10 +39,10 @@ describe('readbuf', () => {
       offset += step
     })
     it('should be readed', () => {
-      const start = 3
-      for (const operation of readbuf.operations) {
-        const a = reader[operation](start)
-        const b = buffer[operation](offset + start)
+      var start = 3
+      for (var operation of readbuf.operations) {
+        var a = reader[operation](start)
+        var b = buffer[operation](offset + start)
         assert.strictEqual(a, b)
       }
     })

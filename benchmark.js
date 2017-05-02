@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-const readbuf = require('.')
-const Benchmark = require('benchmark')
-const suite = new Benchmark.Suite
+var readbuf = require('.')
+var Benchmark = require('benchmark')
+var suite = new Benchmark.Suite
 
 console.log('Benchmark results:');
 
@@ -20,41 +20,41 @@ function run(suite) {
   .run()
 }
 
-const buffer = Buffer.from('abcdefghijklmnopqrstuvwxyz')
-const reader = readbuf(buffer)
+var buffer = Buffer.from('abcdefghijklmnopqrstuvwxyz')
+var reader = readbuf(buffer)
 
 run(
   (new Benchmark.Suite)
   .add('Buffer#slice()', () => {
-    const newBuffer = buffer.slice(3)
-    const byte = newBuffer.readUInt8(1)
+    var newBuffer = buffer.slice(3)
+    var byte = newBuffer.readUInt8(1)
   })
   .add('BufferReader#slice()', () => {
-    const newBuffer = reader.slice(3)
-    const byte = newBuffer.readUInt8(1)
+    var newBuffer = reader.slice(3)
+    var byte = newBuffer.readUInt8(1)
   })
 )
 
 run(
   (new Benchmark.Suite)
   .add('Buffer#slice().slice()', () => {
-    const newBuffer = buffer.slice(3).slice(3)
-    const byte = newBuffer.readUInt8(1)
+    var newBuffer = buffer.slice(3).slice(3)
+    var byte = newBuffer.readUInt8(1)
   })
   .add('BufferReader#slice().slice()', () => {
-    const newBuffer = reader.slice(3).slice(3)
-    const byte = newBuffer.readUInt8(1)
+    var newBuffer = reader.slice(3).slice(3)
+    var byte = newBuffer.readUInt8(1)
   })
 )
 
 run(
   (new Benchmark.Suite)
   .add('Buffer#slice().slice().slice()', () => {
-    const newBuffer = buffer.slice(3).slice(3).slice(3)
-    const byte = newBuffer.readUInt8(1)
+    var newBuffer = buffer.slice(3).slice(3).slice(3)
+    var byte = newBuffer.readUInt8(1)
   })
   .add('BufferReader#slice().slice().slice()', () => {
-    const newBuffer = reader.slice(3).slice(3).slice(3)
-    const byte = newBuffer.readUInt8(1)
+    var newBuffer = reader.slice(3).slice(3).slice(3)
+    var byte = newBuffer.readUInt8(1)
   })
 )

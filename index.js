@@ -17,7 +17,7 @@ class BufferReader {
   }
 }
 
-const operations = [
+var operations = [
   'readDoubleBE',
   'readDoubleLE',
   'readFloatBE',
@@ -42,8 +42,8 @@ const operations = [
   //return this.buffer.readUInt8(this.start + start, end)
 //}
 
-for (const operation of operations) {
-  const code = `
+for (var operation of operations) {
+  var code = `
   BufferReader.prototype.${operation} = function(start, arg2, arg3) {
     return this.buffer.${operation}(this.start + start, arg2, arg3)
   }

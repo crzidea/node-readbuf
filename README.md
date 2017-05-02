@@ -12,10 +12,10 @@ npm install --save readbuf
 All of the standard byte-reading methods of the Buffer interface are implemented and will operate across internal Buffer boundaries transparently.
 
 ```js
-const readbuf = require('readbuf')
-const buffer = new Buffer('abcdefghijklmnopqrstuvwxyz')
+var readbuf = require('readbuf')
+var buffer = new Buffer('abcdefghijklmnopqrstuvwxyz')
 
-const reader = readbuf(buffer)
+var reader = readbuf(buffer)
 reader.readUInt8(3)
 reader.slice(3)
 reader.slice(3).readUInt8(0)
