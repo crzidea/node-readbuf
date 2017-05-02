@@ -4,7 +4,7 @@
   "description": "Read buffer in a blazing fast way!",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha && ./benchmark.js"
   },
   "repository": {
     "type": "git",

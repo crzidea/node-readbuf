@@ -1,8 +1,12 @@
+#!/usr/bin/env node
 const readbuf = require('.')
 const Benchmark = require('benchmark')
 const suite = new Benchmark.Suite
 
+console.log('Benchmark results:');
+
 function run(suite) {
+  console.log('--------');
   suite
   .on('cycle', function(event) {
     console.log(String(event.target));
